@@ -1,0 +1,12 @@
+import "hashes/sha256/sha256" as sha256; 
+def main(private u32[7500][16] image_hashable, u32[8] h){
+    // make the image array into the N u32[16] format 
+    // N = 300 x 400 / 16; 
+    // calculate hash 
+    u32[8] result = sha256(image_hashable);
+    // compare hash
+    for u32 i in 0..8{
+        assert(result[i] == h[i]);
+    }
+    return;
+}
