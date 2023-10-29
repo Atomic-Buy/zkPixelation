@@ -1,2 +1,7 @@
 img/
 */out*
+circomlib/
+*.r1cs
+*.wasm
+*generate_witness.js
+*witness_calculator.js

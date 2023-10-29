@@ -45,3 +45,6 @@ Using zokrates gen circuit which calculate `(12 * 32 *16)` bits hash will consum
 -rw-rw-r-- 1 vielo vielo 1.5G Oct 21 20:19 out.r1cs
 -rw-rw-r-- 1 vielo vielo  345 Oct 21 20:18 p2.zok
 ```
+
+### Circom poseidon 
+- test the hash of the ()
