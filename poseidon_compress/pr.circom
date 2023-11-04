@@ -52,4 +52,33 @@ template RecursiveN(N){
     }
     out <== layers[N-1].out[0];
 }
-component main = LayerN(4);
+
+// a single layer of 15-merkle tree which take 12000 inputs and 800 outputs
+template hash15N(N){
+    var num_input = N * 15; 
+    signal input in[num_input];
+    signal output out[N];
+    component hash[N]; 
+    for (var i = 0; i < N; i++){
+        hash[i] = Poseidon15();
+    }
+    for(var i = 0; i < N; i++){
+        hash[i].in[0] <== in[15*i];
+        hash[i].in[1] <== in[15*i+1];
+        hash[i].in[2] <== in[15*i+2];
+        hash[i].in[3] <== in[15*i+3];
+        hash[i].in[4] <== in[15*i+4];
+        hash[i].in[5] <== in[15*i+5];
+        hash[i].in[6] <== in[15*i+6];
+        hash[i].in[7] <== in[15*i+7];
+        hash[i].in[8] <== in[15*i+8];
+        hash[i].in[9] <== in[15*i+9];
+        hash[i].in[10] <== in[15*i+10];
+        hash[i].in[11] <== in[15*i+11];
+        hash[i].in[12] <== in[15*i+12];
+        hash[i].in[13] <== in[15*i+13];
+        hash[i].in[14] <== in[15*i+14];
+        out[i] <== hash[i].out;
+    }
+}
+component main = hash15N(800);

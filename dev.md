@@ -1,0 +1,5 @@
+- find a problem "snarkJS: Error: Scalar size does not match" in pixel snarkjs proof step 
+- locate the problem is on the function `rgbavg`
+  - maybe it could be the key's problem 
+    - tested: no the setup problem 
+- **located: groth16 system need at least a mutilication circuit **
